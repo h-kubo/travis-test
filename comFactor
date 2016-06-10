@@ -1,0 +1,51 @@
+#!/bin/bash
+
+if [ $# -ne 2 ] ; then
+  echo "Error argument"
+  exit 1
+fi
+
+expr "$1" + 1 > /dev/null 2>&1
+if ! [ $? -lt 2 ] ; then
+  echo "Error: arg1 is  Not Numeric"
+  exit 1
+fi
+
+expr "$2" + 1 > /dev/null 2>&1
+if ! [ $? -lt 2 ] ; then
+  echo "Erorr: arg2 is Not Numeric"
+  exit 1
+fi
+
+int1=$1
+int2=$2
+
+echo $int1
+echo $int2
+
+if [ $int1 -gt $int2 ] ; then
+  result=`expr $int1 - $int2`
+  int1=$result
+elif [ $int1 -lt $int2 ] ; then
+  result=`expr $int2 - $int1`
+  int2=$result
+else
+  echo "factor: $int1"
+  exit 0
+fi
+
+while [ $result -ne 0 ] 
+do
+  if [ $int1 -gt $int2 ] ; then
+    result=`expr $int1 - $int2`
+    int1=$result
+  elif [ $int1 -lt $int2 ] ; then
+    result=`expr $int2 - $int1`
+    int2=$result
+  else
+    result=`expr $int2 - $int1`
+    echo "factor: $int1"
+  fi
+done
+
+exit 0	
