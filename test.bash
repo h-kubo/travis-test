@@ -9,7 +9,7 @@ ERROR_EXIT () {
 }
  
 echo 12 > $tmp-ans
-./ComFactor 12 36 > $tmp-out || ERROR_EXIT "TEST1-1"
+./comFactor 12 36 > $tmp-out || ERROR_EXIT "TEST1-1"
 diff $tmp-ans $tmp-out || ERROR_EXIT "TEST1-2"
 
 echo OK
