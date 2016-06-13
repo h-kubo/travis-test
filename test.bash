@@ -4,15 +4,15 @@ temp=/temp/$$
 
 ERROR_EXIT () {
   echo "$1" >&2
-  rm -f $tmp-*
+  rm -f $tmp*
   exit 1
 }
  
-echo 12 > $tmp-ans
-./comFactor 12 36 > $tmp-out || ERROR_EXIT "TEST1-1"
-diff $tmp-ans $tmp-out || ERROR_EXIT "TEST1-2"
+echo 12 > $tmpans
+./comFactor 12 36 > $tmpout || ERROR_EXIT "TEST1-1"
+diff $tmpans $tmpout || ERROR_EXIT "TEST1-2"
 
 echo OK
-rm -f $temp-*
+rm -f $temp*
 exit 0
 
