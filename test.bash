@@ -21,9 +21,10 @@ diff <($tmp_ans) <($tmp_out) || ERROR_EXIT "TEST2-2"
 echo OK
 
 
+echo "12" > tmp_ans
 ./comFactor "a" "36" > tmp_out && ERROR_EXIT "TEST3-1"
 echo OK
-
+echo tmp_out
 rm -f $temp*
 exit 0
 
