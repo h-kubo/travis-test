@@ -6,7 +6,7 @@ ERROR_EXIT () {
   echo "$1" >&2
   rm -f $tmp_*
   echo NG
-  exit 0
+  exit 1
 }
  
 echo "12" > tmp_ans
