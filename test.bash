@@ -24,7 +24,7 @@ echo OK
 echo "12" > tmp_ans
 ./comFactor "a" "36" > tmp_out && ERROR_EXIT "TEST3-1"
 diff <($tmp_ans) <($tmp_out) || ERROR_EXIT "TEST3-2"
-echo OK
+echo NG
 
 rm -f $temp*
 exit 0
